@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+	"http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+	<title>Unit Converter</title>
+  <%= stylesheet_link_tag "unit_converter", :media => "all" %>
+	<%= javascript_include_tag :defaults %>
+</head>
+
+<body>
+	<div id="unit_converter">
+		<div id="unit_list" style="display:none">
+			<p>
+			<%= render_units(@types) %>
+			</p>
+		</div>
+		
+		<%= content_tag :div, "What can I convert?", :id => 'show_units',
+										:onclick => visual_effect(:toggle_slide, 'unit_list', :duration => 1.0) %>
+				
+		<% form_tag('javascript:void(0)') do %>
+
+			<div id="conversion_input_label">
+				<p><label for="conversion_input">What and how much would you like to convert?</label><br /></p>
+			</div>
+
+			<%= image_tag 'loading.gif', :id => 'loading', :style => "display:none" %>
+
+			<div id="conversion_input_field">
+				<p><%= text_field 'conversion', 'input' %></p>
+			</div>
+
+
+			<div class="auto_complete" id="conversion_input_auto_complete"></div>
+
+			<%= auto_complete_field :conversion_input, 
+			:url => {:action => 'autocomplete_conversion_input'}, 
+			:tokens => ' ' %>
+
+			<%= observe_field :conversion_input,
+			:frequency => 0.5,
+			:before => "Element.show('loading')",
+			:complete => "Element.hide('loading')",
+			:update => 'results',
+			:url => {:action => 'perform_conversion', :only_path => false},
+			:with => "'input=' + encodeURIComponent(value)" %>
+
+		<% end %>
+
+		<p>
+			<div id="results-header">Results<br /></div>
+			<div id="results">
+				<%= render_results_hash(@results) unless @results.nil? %>
+			</div>
+		</p>
+	</div>
+</body>

@@ -1,0 +1,217 @@
+***Features to implement before first deployment:
+Better layout, reformat unit list and possibly results to use tables
+[IMPLEMENTED] Visual effects
+Make sure all conversion rules use the same precision
+Security improvements before deployment
+[IMPLEMENTED] Add a spinner to visualize when the browser is communicating with the server
+Sort the units list in alphabetical order
+About window containing contact info, source code
+
+***Features to implement:
+[IMPLEMENTED] Auto Completion
+Mouse controlled interface
+Temperature Conversion
+Bits & Bytes conversion
+Currency Conversion using some web service
+Visual Indicator showing what arguments have been fulfilled (unit & amount)
+[IMPLEMENTED] XHR so no page reloading will be required - Remove Submit button and perform conversion on the fly
+
+***********************************************
+*** Example of unit_converter mini language ***
+***********************************************
+
+TYPE Speed MASTER km/h				# Represents ConversionType
+TO mp/h DIVIDE 1.609344				# Represents ConversionRule
+TO ms/s DIVIDE 12441.221			# Represents ConversionRule
+
+# These rules implies the following:
+# They don't need to be specified in the rules file
+# FROM mp/h MULTIPLY 1.609344
+# FROM m/s MULTIPLY 12441.221
+
+****************************************
+*** mini language parser psuedo code ***
+****************************************
+
+def ConversionType
+	def initialize(type, master_unit)
+	attr_reader :type, :master_unit, :conversion_rules
+	@type
+	@master_unit
+	@conversion_rules[]
+	
+	def add_rule(ConversionRule)
+		@conversion_rules << ConversionRule
+	end
+end
+
+def ConversionRule
+	def initialize(target_unit, calc_type, ratio)
+	attr_reader :target_unit, :calc_type, :ratio
+	@target_unit
+	@calc_type = MULTIPLY || DIVIDE
+	@ratio
+end
+
+def UnitConverter
+	def initialize(file)
+		BuildConversionRules(file)
+	end
+	
+	attr_reader :conversion_types
+	
+	//Regex patterns, real patterns available ONLY in implementation file (to avoid duplication)
+	@@BLANK_LINE = //
+	@@COMMENT = //
+	@@TYPE = //
+	@@RULE = //
+	
+	@conversion_types[]
+	
+	def BuildConversionRules(file) # Returns an array of ConversionType
+	
+		active_type
+		@conversion_types = Array.new # Always clear types list before building new rules	
+		
+		line = readline()
+		switch(line)
+		 	CASE: match pattern (BLANK_LINE) || (COMMENT)
+				read next line
+				
+			CASE: match pattern TYPE (*) MASTER (*)
+				@conversion_types << active_type unless active_type.nil? # Add the active type to array before creating new type
+				active_type = ConversionType.new(CG1, CG2)
+				
+			CASE: match pattern TO (*) (MULTIPLY|DIVIDE) (*)
+				if active_type = nil
+					throw exception, "No valid type specified before unit"
+				end
+							
+				active_type.add_rule(ConversionRule.new(CG1, CG2, CG3))
+			
+		CASE ELSE:
+			throw exception, "Invalid Syntax, Line does not match any valid patterns" //Perhaps line number can be included here
+		end
+		@conversion_types << active_type unless active_type.nil? # Add the active type to array
+	end
+end
+
+**********************************
+*** Unit Converter psuedo code *** 
+**********************************
+
+183 Km ==
+98.812095 Nautical Mile
+183000 m
+113.71093 Mile
+200131.23 Yard
+600393.7 Foot
+7204724.4 Inch
+18300000 Centimeter
+183000000 Millimeter
+
+
+# Performs a conversion and returns a hash containing possible target units and their values unless to_unit specified
+def perform_conversion(value, from_unit, to_unit = nil)
+	type = self.conversion_types[type_name]
+	
+	if from_unit != type.master_unit
+		# Since the from_unit isn't the master_unit for this type, need to perform a backwards conversion to the master unit before converting to the requested unit
+		
+		value = ApplyConversion(type, from_unit, value, true)
+	end
+				
+	# The master_value is now in the correct master_unit for this type, proceed with conversion
+		
+	ApplyConversion(type, to_unit, value)
+	end
+end
+
+def ApplyConversion(type, unit, value, reverse = false)
+	cr = type.conversion_rules["unit"]
+	case cr.calc_type
+		when MULTIPLY
+			if reverse
+				return value / cr.ratio
+			else
+				return value * cr.ratio
+		
+		when DIVIDE
+			if reverse
+				return value * cr.ratio
+			else
+				return value / cr.ratio
+			end
+		end
+	end
+end
+
+# Return a list of types
+def GetTypes()
+	types = array.new
+	for each type
+		types << type
+	end
+	types
+end
+
+# Returns the type that the passed in unit belongs to, nil if unit not found
+def GetType("unit")
+end
+
+ ====================
+ = Conversion Rules =
+ ====================
+
+Length MASTER m
+TO Km MULTIPLY 0.001
+TO Mile MULTIPLY 0.00062137119
+TO Yard MULTIPLY 1.0936133
+TO Foot MULTIPLY 3.2808399
+TO Inch MULTIPLY 39.370079
+TO Centimeter MULTIPLY 100
+TO Millimeter MULTIPLY 1000
+TO Nautical Mile MULTIPLY 0.0005399568
+
+Speed MASTER Kilometers/h
+TO Kilometers/m MULTIPLY 0.016666667
+TO Miles/h MULTIPLY 0.62137119
+TO Meters/s MULTIPLY 0.27777778
+TO Knots MULTIPLY 0.5399568
+
+TYPE Weight MASTER Gram
+TO Pound MULTIPLY 0.0022046226
+TO Ounce MULTIPLY 0.035273962
+TO Kilogram MULTIPLY 0.001
+TO Metric Ton MULTIPLY 0.000001
+TO Microgram MULTIPLY 1000000
+TO Milligram MULTIPLY 1000
+
+TYPE Volume MASTER liter
+TO US Gallon MULTIPLY 0.26417205
+TO US Pint MULTIPLY 2.1133764
+TO UK Pint MULTIPLY 1.76
+TO US Tablespoon MULTIPLY 67.628045
+TO US Teaspoon MULTIPLY 202.88414
+TO Cubic Meter MULTIPLY 0.001
+TO Deciliter MULTIPLY 10
+TO Centiliter MULTIPLY 100
+TO Milliliter MULTIPLY 1000
+TO Microliter MULTIPLY 1000000
+
+TYPE Bits MASTER bit
+Kilobit
+Megabit
+Gigabit
+Terrabit
+Petabit
+Exabit
+Byte
+Kilobyte
+Megabyte
+Gigabyte
+Terrabyte
+Petabyte
+Exabyte
+
+TYPE Temperature MASTER Celsius

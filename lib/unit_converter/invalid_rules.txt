@@ -1,0 +1,8 @@
+
+hej
+
+TYPE Speed
+
+//
+aff
+mp/h TO km/h MULTIPLY 1.609344

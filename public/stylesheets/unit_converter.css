@@ -1,0 +1,94 @@
+#unit_converter {
+}
+
+#flash-notice {
+	color: #F00;
+}
+
+#conversion_input_label {
+	text-align: center;
+}
+
+#conversion_input_field {
+	width: 200px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+#results-header {
+	font-weight: bold;
+}
+
+#results {
+	width: 300px;
+}
+
+body {
+	min-width: 400px; /* To avoid some problem with IE6, see: http://www.456bereastreet.com/lab/developing_with_web_standards/csslayout/2-col/ */
+}
+
+#unit_list {
+	margin: auto;
+	width: 350px;
+}
+
+#types_left {
+	border: 1px solid #999;
+	margin: 10px;
+	width: 150px;
+	overflow: hidden;
+	background-color: silver;
+	float: left;
+}
+
+#types_right {
+	border: 1px solid #999;
+	margin: 10px;
+	width: 150px;
+	overflow: hidden;
+	background-color: silver;
+	float: right;
+}
+
+#type {
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+
+#units {
+	font-style: italic;
+}
+
+#loading {
+	float: right;
+}
+
+#show_units {
+	cursor: pointer;
+}
+
+/*AutoCompletion*/
+
+div.auto_complete { 
+width: 350px; 
+background: #fff; 
+} 
+div.auto_complete ul { 
+border:1px solid #888; 
+margin:0; 
+padding:0; 
+width:100%; 
+list-style-type:none; 
+} 
+div.auto_complete ul li { 
+margin:0; 
+padding:3px; 
+} 
+div.auto_complete ul li.selected { 
+background-color: #ffb; 
+} 
+div.auto_complete ul strong.highlight { 
+color: #800; 
+margin:0; 
+padding:0; 
+}
