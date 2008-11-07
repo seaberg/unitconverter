@@ -10,14 +10,13 @@
 
 <body>
 	<div id="unit_converter">
+
 		<div id="unit_list" style="display:none">
-			<p>
 			<%= render_units(@types) %>
-			</p>
 		</div>
-		
+
 		<%= content_tag :div, "What can I convert?", :id => 'show_units',
-										:onclick => visual_effect(:toggle_slide, 'unit_list', :duration => 1.0) %>
+		:onclick => visual_effect(:toggle_blind, 'unit_list', :duration => 1.0) %>
 				
 		<% form_tag('javascript:void(0)') do %>
 

@@ -27,9 +27,11 @@ body {
 	min-width: 400px; /* To avoid some problem with IE6, see: http://www.456bereastreet.com/lab/developing_with_web_standards/csslayout/2-col/ */
 }
 
+/*TODO: Make sure the unit list div (red border) wraps around the whole units list*/
 #unit_list {
 	margin: auto;
 	width: 350px;
+	border: 1px solid #F00; /*debug*/
 }
 
 #types_left {
@@ -65,6 +67,7 @@ body {
 
 #show_units {
 	cursor: pointer;
+	border: 1px solid #999; /*debug*/
 }
 
 /*AutoCompletion*/

@@ -14,16 +14,14 @@ module UnitConverterHelper
       end
       left = !left
         
-      units += "<p>"
-      units += "<div id=\"type\">"
-      units += "#{type}"
-      units += "</div>"
-      units += "<div id=\"units\">"
-      hash[type].each { |unit| units += "--#{unit}<br />" }
-      units += "</div>"
-      units += "</p>"
+      units += "<table>"
+      units += "<tr>"
+      units += "<td>#{type}</td>"
+      units += "</tr>"
+      hash[type].each { |unit| units += "<tr><td>#{unit}</td></tr>" }
+      units += "</table>"
       
-      units += "</div>"      
+      units += "</div>"
     end
     units
   end
