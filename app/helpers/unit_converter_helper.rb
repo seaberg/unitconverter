@@ -16,7 +16,7 @@ module UnitConverterHelper
         
       units += "<table>"
       units += "<tr>"
-      units += "<td>#{type}</td>"
+      units += "<td id=\"type-header\">#{type}</td>"
       units += "</tr>"
       hash[type].each { |unit| units += "<tr><td>#{unit}</td></tr>" }
       units += "</table>"
@@ -31,7 +31,7 @@ module UnitConverterHelper
     return "<p>Not a valid conversion</p>" if results.nil?
     text = "<p>"
     results.each_key do |r|
-      text += "#{r}: #{results[r]}<br />"
+      text += "#{results[r]} #{r}<br />"
     end
     text += "</p>"
   end

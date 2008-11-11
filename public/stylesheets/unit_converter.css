@@ -6,13 +6,13 @@
 }
 
 #conversion_input_label {
-	text-align: center;
+/*	text-align: center;*/
 }
 
 #conversion_input_field {
 	width: 200px;
-	margin-right: auto;
-	margin-left: auto;
+/*	margin-right: auto;*/
+/*	margin-left: auto;*/
 }
 
 #results-header {
@@ -29,9 +29,11 @@ body {
 
 /*TODO: Make sure the unit list div (red border) wraps around the whole units list*/
 #unit_list {
-	margin: auto;
 	width: 350px;
-	border: 1px solid #F00; /*debug*/
+	height: 420px;
+/*	margin: auto;*/
+	border: 1px solid #F00;
+	background-color: red;
 }
 
 #types_left {
@@ -52,8 +54,11 @@ body {
 	float: right;
 }
 
-#type {
+#type-header {
 	font-weight: bold;
+}
+
+#type {
 	margin-bottom: 5px;
 }
 
@@ -66,8 +71,10 @@ body {
 }
 
 #show_units {
+	width: 140px;
 	cursor: pointer;
-	border: 1px solid #999; /*debug*/
+	border: 1px solid #999;
+	background-color: yellow;
 }
 
 /*AutoCompletion*/

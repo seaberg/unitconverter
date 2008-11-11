@@ -11,12 +11,13 @@
 <body>
 	<div id="unit_converter">
 
-		<div id="unit_list" style="display:none">
-			<%= render_units(@types) %>
-		</div>
-
 		<%= content_tag :div, "What can I convert?", :id => 'show_units',
 		:onclick => visual_effect(:toggle_blind, 'unit_list', :duration => 1.0) %>
+
+		<div id="unit_list" style="display:none">
+			<%= render_units(@types) %>
+			<br />
+		</div>
 				
 		<% form_tag('javascript:void(0)') do %>
 
@@ -48,7 +49,7 @@
 		<% end %>
 
 		<p>
-			<div id="results-header">Results<br /></div>
+			<div id="results-header">XXX Is equal to:<br /></div>
 			<div id="results">
 				<%= render_results_hash(@results) unless @results.nil? %>
 			</div>
