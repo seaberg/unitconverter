@@ -22,6 +22,8 @@ class UnitConverterController < ApplicationController
     # flash[:last_input] = params[:input] # Save the input so it can be entered as default value for new conversions
     begin
       input = parse_input(params[:input])
+      @unit = input[:unit]
+      @value = input[:value]
       @results = uc.perform_conversion(input[:value], input[:unit])
     rescue ArgumentError
       # Not a valid conversion

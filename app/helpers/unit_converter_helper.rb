@@ -27,9 +27,14 @@ module UnitConverterHelper
   end
   
   # Renders a UnitConverter results hash
-  def render_results_hash(results)
+  def render_results_hash(unit, value, results)		
+    text = ""
+    
     return "<p>Not a valid conversion</p>" if results.nil?
-    text = "<p>"
+    
+    text += "<div id=\"results-header\">#{value} #{unit} Is equal to:<br /></div>"
+    
+    text += "<p>"
     results.each_key do |r|
       text += "#{results[r]} #{r}<br />"
     end
