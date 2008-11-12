@@ -117,6 +117,7 @@ class UnitConverter
       rules = []
       rules << type.master_unit
       type.conversion_rules.each_value { |cr| rules << cr.target_unit }
+      rules.sort!
       type_names[type.name] = rules
     end
     type_names
@@ -129,7 +130,7 @@ class UnitConverter
       units << type.master_unit
       type.conversion_rules.each_value { |cr| units << cr.target_unit }
     end
-    units
+    units.sort!
   end
   
   
