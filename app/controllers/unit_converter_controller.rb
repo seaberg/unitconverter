@@ -8,7 +8,6 @@ class UnitConverterController < ApplicationController
   def index
     uc = UnitConverter.new
     @types = uc.get_types
-    @results = nil # TODO: REMOVE THIS
     
     if request.post?
       perform_conversion(params[:input])
