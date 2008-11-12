@@ -15,6 +15,7 @@ Bits & Bytes conversion
 Currency Conversion using some web service
 Visual Indicator showing what arguments have been fulfilled (unit & amount)
 [IMPLEMENTED] XHR so no page reloading will be required - Remove Submit button and perform conversion on the fly
+Convert unit_converter library to a ruby gem instead
 
 ***********************************************
 *** Example of unit_converter mini language ***
