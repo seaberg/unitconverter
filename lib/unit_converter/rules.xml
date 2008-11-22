@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<unitconverter_rules>
+<type name="Length" master="m">
+	<rule>
+		<unit>Centimeter</unit>
+		<operation>MULTIPLY</operation>
+		<factor>100</factor>
+	</rule>
+	<rule>
+		<unit>Foot</unit>
+		<operation>MULTIPLY</operation>
+		<factor>3.2808399</factor>
+	</rule>
+	<rule>
+		<unit>Inch</unit>
+		<operation>MULTIPLY</operation>
+		<factor>39.37007874</factor>
+	</rule>
+	<rule>
+		<unit>Km</unit>
+		<operation>MULTIPLY</operation>
+		<factor>0.001</factor>
+	</rule>
+	<rule>
+		<unit>Mile</unit>
+		<operation>MULTIPLY</operation>
+		<factor>0.00062137119</factor>
+	</rule>
+	<rule>
+		<unit>Millimeter</unit>
+		<operation>MULTIPLY</operation>
+		<factor>1000</factor>
+	</rule>
+	<rule>
+		<unit>Nautical Mile</unit>
+		<operation>MULTIPLY</operation>
+		<factor>0.0005399568</factor>
+	</rule>
+	<rule>
+		<unit>Yard</unit>
+		<operation>MULTIPLY</operation>
+		<factor>1.0936133</factor>
+	</rule>
+</type>
+<type name="Speed" master="Kilometers/h">
+	<rule>
+		<unit>Kilometers/minute</unit>
+		<operation>MULTIPLY</operation>
+		<factor>0.016666667</factor>
+	</rule>
+	<rule>
+		<unit>Knots</unit>
+		<operation>MULTIPLY</operation>
+		<factor>0.5399568</factor>
+	</rule>
+	<rule>
+		<unit>Meters/s</unit>
+		<operation>MULTIPLY</operation>
+		<factor>0.27777778</factor>
+	</rule>
+	<rule>
+		<unit>Miles/h</unit>
+		<operation>MULTIPLY</operation>
+		<factor>0.62137119</factor>
+	</rule>
+</type>
+<type name="Weight" master="Gram">
+	<rule>
+		<unit>Kilogram</unit>
+		<operation>MULTIPLY</operation>
+		<factor>0.001</factor>
+	</rule>
+	<rule>
+		<unit>Metric Ton</unit>
+		<operation>MULTIPLY</operation>
+		<factor>0.000001</factor>
+	</rule>
+	<rule>
+		<unit>Microgram</unit>
+		<operation>MULTIPLY</operation>
+		<factor>1000000</factor>
+	</rule>
+	<rule>
+		<unit>Milligram</unit>
+		<operation>MULTIPLY</operation>
+		<factor>1000</factor>
+	</rule>
+	<rule>
+		<unit>Ounce</unit>
+		<operation>MULTIPLY</operation>
+		<factor>0.035273962</factor>
+	</rule>
+	<rule>
+		<unit>Pound</unit>
+		<operation>MULTIPLY</operation>
+		<factor>0.0022046226</factor>
+	</rule>
+</type>
+<type name="Volume" master="Liter">
+	<rule>
+		<unit>Centiliter</unit>
+		<operation>MULTIPLY</operation>
+		<factor>100</factor>
+	</rule>
+	<rule>
+		<unit>Cubic Meter</unit>
+		<operation>MULTIPLY</operation>
+		<factor>0.001</factor>
+	</rule>
+	<rule>
+		<unit>Deciliter</unit>
+		<operation>MULTIPLY</operation>
+		<factor>10</factor>
+	</rule>
+	<rule>
+		<unit>Microliter</unit>
+		<operation>MULTIPLY</operation>
+		<factor>1000000</factor>
+	</rule>
+	<rule>
+		<unit>Milliliter</unit>
+		<operation>MULTIPLY</operation>
+		<factor>1000</factor>
+	</rule>
+	<rule>
+		<unit>UK Pint</unit>
+		<operation>MULTIPLY</operation>
+		<factor>1.7597539864</factor>
+	</rule>
+	<rule>
+		<unit>US Gallon</unit>
+		<operation>MULTIPLY</operation>
+		<factor>0.26417205</factor>
+	</rule>
+	<rule>
+		<unit>US Pint</unit>
+		<operation>MULTIPLY</operation>
+		<factor>2.1133764189</factor>
+	</rule>
+	<rule>
+		<unit>US Tablespoon</unit>
+		<operation>MULTIPLY</operation>
+		<factor>67.628045405</factor>
+	</rule>
+	<rule>
+		<unit>US Teaspoon</unit>
+		<operation>MULTIPLY</operation>
+		<factor>202.88414</factor>
+	</rule>
+</type>
+</unitconverter_rules>
