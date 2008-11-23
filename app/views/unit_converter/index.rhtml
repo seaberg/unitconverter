@@ -39,7 +39,7 @@
 			:tokens => ' ' %>
 
 			<%= observe_field :conversion_input,
-			:frequency => 0.5,
+			:frequency => 2.0,
 			:before => "Element.show('loading')",
 			:complete => "Element.hide('loading')",
 			:update => 'results',

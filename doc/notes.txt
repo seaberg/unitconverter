@@ -2,6 +2,7 @@
 Better layout, reformat unit list and possibly results to use tables
 [IMPLEMENTED] Visual effects
 Make sure all conversion rules use the same precision
+Display the results with fixed precision
 Security improvements before deployment
 [IMPLEMENTED] Add a spinner to visualize when the browser is communicating with the server
 Sort the units list in alphabetical order

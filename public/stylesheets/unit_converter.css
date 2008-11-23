@@ -30,7 +30,7 @@ body {
 /*TODO: Make sure the unit list div (red border) wraps around the whole units list*/
 #unit_list {
 	width: 350px;
-	height: 420px;
+	height: 480px;
 /*	margin: auto;*/
 	border: 1px solid #F00;
 	background-color: red;
