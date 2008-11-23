@@ -1,3 +1,5 @@
+require "rexml/document"
+
 # ConversionRule represents a single unit on which you can perform conversion, for example km/h.
 class ConversionRule
   attr_reader :target_unit, :calc_type, :ratio
@@ -31,8 +33,8 @@ end
 
 class UnitConverter  
   # Creates a new UnitConverter with conversion rules based on the input file
-  # Defaults to "rules.txt" if no file is specified
-  def initialize(file = File.dirname(__FILE__) + "/rules.txt")
+  # Defaults to "rules.xml" if no file is specified
+  def initialize(file = File.dirname(__FILE__) + "/rules.xml")
     @conversion_types = nil
     build_conversion_rules(file)
   end
@@ -135,41 +137,43 @@ class UnitConverter
   
   
   private
-  
-  # Reads a conversion rules file and stores the information in the @conversion_types hash.
-  def build_conversion_rules(file)
+
+  def build_conversion_rules(filename)
     active_type = nil
     @conversion_types = Hash.new
-    
+
     # Make sure the file exists before trying to open it
-    raise(IOError, "File does not exist") unless File.exists?(file)
+    raise(IOError, "File does not exist") unless File.exists?(filename)
+
+    file = File.new(filename)
+    doc = REXML::Document.new file
     
-    IO.foreach(file) do |line|
-      if md = @@BLANK_LINE.match(line) # Blank line match, do nothing
-        
-      elsif md = @@COMMENT.match(line) # Comment, do nothing
-        
-      elsif md = @@TYPE.match(line) # A TYPE row is matched, set the active type
-        # If there's a currently active type, add it to the array before proceeding
-        @conversion_types[active_type.name] = active_type unless active_type.nil?
-        active_type = ConversionType.new(md[1], md[2])
-      
-      elsif md = @@RULE.match(line) # A RULE row is matched
+    raise(SyntaxError, "Unable to parse #{filename}") unless doc.root
+    
+    raise(SyntaxError, "Invalid root element") unless doc.root.name == "unitconverter_rules"
+
+    # For each type
+    doc.elements.each("//type") do |type|        
+      # Create new type
+      @conversion_types[active_type.name] = active_type unless active_type.nil?
+      active_type = ConversionType.new(type.elements["name"].text, type.elements["master"].text)
+      # For each rule in type
+      type.elements.each("rule") do |rule|
+        # Create Rule
         # Make sure there's an active type set before adding any rules
         if active_type == nil
           raise "Syntax Error, No valid type set before rule"
         end
-        
+
         # Type is ok, create a new rule and add it to the rules array
-        active_type.add_rule(ConversionRule.new(md[1], md[2], md[3].to_f))
-      
-      else
-        raise(SyntaxError, "line doesn't match any valid pattern")
-      end        
+        active_type.add_rule(ConversionRule.new(rule.elements["unit"].text,
+        rule.elements["operation"].text,
+        rule.elements["factor"].text.to_f))
+      end
     end
     @conversion_types[active_type.name] = active_type unless active_type.nil?
   end
-  
+    
   # Applies a conversion a unit, can apply a reverse transformation, returns result value  
   def apply_conversion(type, unit, value, reverse = false)
     cr = type.conversion_rules[unit.to_s]
