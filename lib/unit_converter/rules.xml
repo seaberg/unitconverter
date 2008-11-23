@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <unitconverter_rules>
-<type name="Length" master="m">
+<type>
+	<name>Length</name>
+	<master>m</master>
 	<rule>
 		<unit>Centimeter</unit>
 		<operation>MULTIPLY</operation>
@@ -42,7 +44,9 @@
 		<factor>1.0936133</factor>
 	</rule>
 </type>
-<type name="Speed" master="Kilometers/h">
+<type>
+	<name>Speed</name>
+	<master>Kilometers/h</master>
 	<rule>
 		<unit>Kilometers/minute</unit>
 		<operation>MULTIPLY</operation>
@@ -64,7 +68,9 @@
 		<factor>0.62137119</factor>
 	</rule>
 </type>
-<type name="Weight" master="Gram">
+<type>
+	<name>Weight</type>
+	<master>Gram</master>
 	<rule>
 		<unit>Kilogram</unit>
 		<operation>MULTIPLY</operation>
@@ -96,7 +102,9 @@
 		<factor>0.0022046226</factor>
 	</rule>
 </type>
-<type name="Volume" master="Liter">
+<type>
+	<name>Volume</name>
+	<master>Liter</master>
 	<rule>
 		<unit>Centiliter</unit>
 		<operation>MULTIPLY</operation>
