@@ -32,13 +32,13 @@ module UnitConverterHelper
     
     return "<p>Not a valid conversion</p>" if results.nil?
     
-    text += "<div id=\"results-header\">#{value} #{unit} Is equal to:<br /></div>"
+    text += "<div id=\"results-header\">#{value} #{unit}<br /></div>"
     
-    text += "<p>"
+    text += "<table>"
     results.each_key do |r|
-      text += "#{results[r]} #{r}<br />"
+      text += "<tr><td>#{r}</td><td>#{results[r]}</td></tr>"
     end
-    text += "</p>"
+    text += "</table>"
   end
   
   

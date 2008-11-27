@@ -1,5 +1,6 @@
 ***Features to implement before first deployment:
 Better layout, reformat unit list and possibly results to use tables
+Use same plural form for all units in unit list, also use pluralize for displaying results
 [IMPLEMENTED] Visual effects
 Make sure all conversion rules use the same precision
 Security improvements before deployment
@@ -11,7 +12,8 @@ About window containing contact info, source code
 [IMPLEMENTED] Auto Completion
 Mouse controlled interface
 Temperature Conversion
-Bits & Bytes conversion
+Bits & Bytes Conversion
+Time Conversion
 Currency Conversion using some web service
 Visual Indicator showing what arguments have been fulfilled (unit & amount)
 [IMPLEMENTED] XHR so no page reloading will be required - Remove Submit button and perform conversion on the fly

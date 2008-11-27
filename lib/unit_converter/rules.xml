@@ -2,53 +2,53 @@
 <unitconverter_rules>
 <type>
 	<name>Length</name>
-	<master>m</master>
+	<master>Meters</master>
 	<rule>
-		<unit>Centimeter</unit>
+		<unit>Centimeters</unit>
 		<operation>MULTIPLY</operation>
 		<factor>100</factor>
 	</rule>
 	<rule>
-		<unit>Foot</unit>
+		<unit>Feet</unit>
 		<operation>MULTIPLY</operation>
 		<factor>3.2808399</factor>
 	</rule>
 	<rule>
-		<unit>Inch</unit>
+		<unit>Inches</unit>
 		<operation>MULTIPLY</operation>
 		<factor>39.37007874</factor>
 	</rule>
 	<rule>
-		<unit>Km</unit>
+		<unit>Kilometers</unit>
 		<operation>MULTIPLY</operation>
 		<factor>0.001</factor>
 	</rule>
 	<rule>
-		<unit>Mile</unit>
+		<unit>Miles</unit>
 		<operation>MULTIPLY</operation>
 		<factor>0.00062137119</factor>
 	</rule>
 	<rule>
-		<unit>Millimeter</unit>
+		<unit>Millimeters</unit>
 		<operation>MULTIPLY</operation>
 		<factor>1000</factor>
 	</rule>
 	<rule>
-		<unit>Nautical Mile</unit>
+		<unit>Nautical Miles</unit>
 		<operation>MULTIPLY</operation>
 		<factor>0.0005399568</factor>
 	</rule>
 	<rule>
-		<unit>Yard</unit>
+		<unit>Yards</unit>
 		<operation>MULTIPLY</operation>
 		<factor>1.0936133</factor>
 	</rule>
 </type>
 <type>
 	<name>Speed</name>
-	<master>Kilometers/h</master>
+	<master>Kilometers / Hour</master>
 	<rule>
-		<unit>Kilometers/minute</unit>
+		<unit>Kilometers / Minute</unit>
 		<operation>MULTIPLY</operation>
 		<factor>0.016666667</factor>
 	</rule>
@@ -58,100 +58,100 @@
 		<factor>0.5399568</factor>
 	</rule>
 	<rule>
-		<unit>Meters/s</unit>
+		<unit>Meters / Second</unit>
 		<operation>MULTIPLY</operation>
 		<factor>0.27777778</factor>
 	</rule>
 	<rule>
-		<unit>Miles/h</unit>
+		<unit>Miles / Hour</unit>
 		<operation>MULTIPLY</operation>
 		<factor>0.62137119</factor>
 	</rule>
 </type>
 <type>
 	<name>Weight</name>
-	<master>Gram</master>
+	<master>Grams</master>
 	<rule>
-		<unit>Kilogram</unit>
+		<unit>Kilograms</unit>
 		<operation>MULTIPLY</operation>
 		<factor>0.001</factor>
 	</rule>
 	<rule>
-		<unit>Metric Ton</unit>
+		<unit>Metric Tons</unit>
 		<operation>MULTIPLY</operation>
 		<factor>0.000001</factor>
 	</rule>
 	<rule>
-		<unit>Microgram</unit>
+		<unit>Micrograms</unit>
 		<operation>MULTIPLY</operation>
 		<factor>1000000</factor>
 	</rule>
 	<rule>
-		<unit>Milligram</unit>
+		<unit>Milligrams</unit>
 		<operation>MULTIPLY</operation>
 		<factor>1000</factor>
 	</rule>
 	<rule>
-		<unit>Ounce</unit>
+		<unit>Ounces</unit>
 		<operation>MULTIPLY</operation>
 		<factor>0.035273962</factor>
 	</rule>
 	<rule>
-		<unit>Pound</unit>
+		<unit>Pounds</unit>
 		<operation>MULTIPLY</operation>
 		<factor>0.0022046226</factor>
 	</rule>
 </type>
 <type>
 	<name>Volume</name>
-	<master>Liter</master>
+	<master>Liters</master>
 	<rule>
-		<unit>Centiliter</unit>
+		<unit>Centiliters</unit>
 		<operation>MULTIPLY</operation>
 		<factor>100</factor>
 	</rule>
 	<rule>
-		<unit>Cubic Meter</unit>
+		<unit>Cubic Meters</unit>
 		<operation>MULTIPLY</operation>
 		<factor>0.001</factor>
 	</rule>
 	<rule>
-		<unit>Deciliter</unit>
+		<unit>Deciliters</unit>
 		<operation>MULTIPLY</operation>
 		<factor>10</factor>
 	</rule>
 	<rule>
-		<unit>Microliter</unit>
+		<unit>Microliters</unit>
 		<operation>MULTIPLY</operation>
 		<factor>1000000</factor>
 	</rule>
 	<rule>
-		<unit>Milliliter</unit>
+		<unit>Milliliters</unit>
 		<operation>MULTIPLY</operation>
 		<factor>1000</factor>
 	</rule>
 	<rule>
-		<unit>UK Pint</unit>
+		<unit>UK Pints</unit>
 		<operation>MULTIPLY</operation>
 		<factor>1.7597539864</factor>
 	</rule>
 	<rule>
-		<unit>US Gallon</unit>
+		<unit>US Gallons</unit>
 		<operation>MULTIPLY</operation>
 		<factor>0.26417205</factor>
 	</rule>
 	<rule>
-		<unit>US Pint</unit>
+		<unit>US Pints</unit>
 		<operation>MULTIPLY</operation>
 		<factor>2.1133764189</factor>
 	</rule>
 	<rule>
-		<unit>US Tablespoon</unit>
+		<unit>US Tablespoons</unit>
 		<operation>MULTIPLY</operation>
 		<factor>67.628045405</factor>
 	</rule>
 	<rule>
-		<unit>US Teaspoon</unit>
+		<unit>US Teaspoons</unit>
 		<operation>MULTIPLY</operation>
 		<factor>202.88414</factor>
 	</rule>
