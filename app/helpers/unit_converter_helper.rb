@@ -41,5 +41,4 @@ module UnitConverterHelper
     text += "</table>"
   end
   
-  
 end

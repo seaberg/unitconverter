@@ -1,15 +1,15 @@
 ***Features to implement before first deployment:
-Better layout, reformat unit list and possibly results to use tables
-Use same plural form for all units in unit list, also use pluralize for displaying results
+[IMPLEMENTED] Better layout, reformat unit list and possibly results to use tables
 [IMPLEMENTED] Visual effects
 Make sure all conversion rules use the same precision
 Security improvements before deployment
 [IMPLEMENTED] Add a spinner to visualize when the browser is communicating with the server
 Sort the units list in alphabetical order
-About window containing contact info, source code
+[IMPLEMENTED] About window containing contact info, source code
 
 ***Features to implement:
 [IMPLEMENTED] Auto Completion
+Use pluralize for displaying results
 Mouse controlled interface
 Temperature Conversion
 Bits & Bytes Conversion

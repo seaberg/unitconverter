@@ -1,4 +1,11 @@
+body {
+	background-color: #899198;
+	color: #FFFFFF;
+}
+
 #unit_converter {
+	padding: 10px;
+	width: 370px;
 }
 
 #flash-notice {
@@ -17,6 +24,8 @@
 
 #results-header {
 	font-weight: bold;
+	margin-top: 10px;
+	margin-bottom: 10px;
 }
 
 #results {
@@ -27,31 +36,28 @@ body {
 	min-width: 400px; /* To avoid some problem with IE6, see: http://www.456bereastreet.com/lab/developing_with_web_standards/csslayout/2-col/ */
 }
 
-/*TODO: Make sure the unit list div (red border) wraps around the whole units list*/
 #unit_list {
 	width: 350px;
 	height: 480px;
-/*	margin: auto;*/
-	border: 1px solid #F00;
-	background-color: red;
+	background-color: #737A80;
 }
 
 #types_left {
-	border: 1px solid #999;
 	margin: 10px;
 	width: 150px;
 	overflow: hidden;
-	background-color: silver;
+	background-color: #737A80;
 	float: left;
+	border: 1px solid #999;
 }
 
 #types_right {
-	border: 1px solid #999;
 	margin: 10px;
 	width: 150px;
 	overflow: hidden;
-	background-color: silver;
+	background-color: #737A80;
 	float: right;
+	border: 1px solid #999;	
 }
 
 #type-header {
@@ -73,8 +79,15 @@ body {
 #show_units {
 	width: 140px;
 	cursor: pointer;
-	border: 1px solid #999;
-	background-color: yellow;
+	/*border: 1px solid #999;*/
+	padding-left: 3px;
+	background-color: #737A80;
+}
+
+#footer {
+	font-size: 75%;
+	font-style: italic;
+	margin-top: 10px;
 }
 
 /*AutoCompletion*/
@@ -82,6 +95,7 @@ body {
 div.auto_complete { 
 width: 350px; 
 background: #fff; 
+color: black;
 } 
 div.auto_complete ul { 
 border:1px solid #888; 
@@ -89,16 +103,20 @@ margin:0;
 padding:0; 
 width:100%; 
 list-style-type:none; 
+color: black;
 } 
 div.auto_complete ul li { 
 margin:0; 
 padding:3px; 
+color: black;
 } 
 div.auto_complete ul li.selected { 
 background-color: #ffb; 
+color: black;
 } 
 div.auto_complete ul strong.highlight { 
 color: #800; 
 margin:0; 
 padding:0; 
+color: black;
 }
