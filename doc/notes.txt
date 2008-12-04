@@ -1,13 +1,13 @@
 ***Features to implement before first deployment:
 [IMPLEMENTED] Better layout, reformat unit list and possibly results to use tables
 [IMPLEMENTED] Visual effects
-Make sure all conversion rules use the same precision
 Security improvements before deployment
 [IMPLEMENTED] Add a spinner to visualize when the browser is communicating with the server
-Sort the units list in alphabetical order
 [IMPLEMENTED] About window containing contact info, source code
 
 ***Features to implement:
+Make sure all conversion rules use the same precision
+Sort the units list in alphabetical order <-- perhaps it looks better non-sorted, the two columns in the unit list are now equally balanced
 [IMPLEMENTED] Auto Completion
 Use pluralize for displaying results
 Mouse controlled interface

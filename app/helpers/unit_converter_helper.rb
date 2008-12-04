@@ -6,7 +6,6 @@ module UnitConverterHelper
     left = true
     hash.each_key do |type|
       # Alternate between types_left and types_right
-      # TODO: Probably better to separate columns using tables instead
       if left
         units += "<div id=\"types_left\">"
       else
