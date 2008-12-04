@@ -38,14 +38,7 @@ class UnitConverter
     @conversion_types = nil
     build_conversion_rules(file)
   end
-  
-  # Regex patterns
-  # FIXME: Should these be changed to constants? Or kept as class variables? Or something else?
-	@@BLANK_LINE = /^\s*$/
-	@@COMMENT = /^\s*#+.*/
-	@@TYPE = /^TYPE (\S+.*) MASTER (\S+.*)/
-	@@RULE = /^TO (\S+.*) (MULTIPLY|DIVIDE) ((?:\d|\.)+)$/
-  
+    
   # Performs a conversion between two known units
   # If to_unit isn't specified, returns a hash with other compatible units as key
   # and conversion result as value
