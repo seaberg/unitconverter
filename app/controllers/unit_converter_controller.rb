@@ -22,6 +22,7 @@ class UnitConverterController < ApplicationController
       input = parse_input(params[:input])
       @unit = input[:unit]
       @value = input[:value]
+      logger.info("Performing conversion: #{input[:value]} #{input[:unit]}")
       @results = uc.perform_conversion(input[:value], input[:unit])
     rescue ArgumentError
       # Not a valid conversion
