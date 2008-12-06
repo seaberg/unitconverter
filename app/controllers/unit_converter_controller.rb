@@ -4,6 +4,9 @@
 require File.expand_path(File.dirname(__FILE__) + "/../../lib/unit_converter/unit_converter.rb")
 
 class UnitConverterController < ApplicationController
+  
+  before_filter :validate_input
+  
   # Display the unit_converter, perform conversion if posting a conversion request
   def index
     uc = UnitConverter.new
@@ -31,6 +34,7 @@ class UnitConverterController < ApplicationController
   end    
   
   def autocomplete_conversion_input
+    logger.info("Searching autocompletion for:#{params[:conversion][:input]}")
     re = Regexp.new("^#{params[:conversion][:input]}", "i")    
     uc = UnitConverter.new
     units = uc.get_units
@@ -62,6 +66,22 @@ class UnitConverterController < ApplicationController
       raise ArgumentError, "Invalid Input"
     end
     result = {:value => value, :unit => unit}    
+  end
+  
+  # Raises an exception if any illegal characters are found in the input
+  def validate_input
+    illegal_characters = /[^a-z0-9.\/ ]/i
+    # TODO: This controller uses params[:input] and params[:conversion][:input] for the same thing, combine them!
+    # Remove input completely if any illegal characters are entered
+    # TODO: Setting empty variables to prevent conversion and autocompletion is NOT good, make sure processing is stopped completely instead!
+    unless params[:input].nil?
+      logger.info("Validating input: #{params[:input]}")
+      params[:input] = "" if illegal_characters.match(params[:input])
+    end
+    unless params[:conversion].nil?
+      logger.info("Validating input: #{params[:conversion][:input]}")
+      params[:conversion][:input] = "XXXXXXXXXXXXXXXXXXXXXXXXXXX" if illegal_characters.match(params[:conversion][:input])
+    end
   end
   
 end
