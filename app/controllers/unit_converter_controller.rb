@@ -76,11 +76,12 @@ class UnitConverterController < ApplicationController
     # TODO: Setting empty variables to prevent conversion and autocompletion is NOT good, make sure processing is stopped completely instead!
     unless params[:input].nil?
       logger.info("Validating input: #{params[:input]}")
-      params[:input] = "" if illegal_characters.match(params[:input])
+      params[:input] = "" if illegal_characters.match(params[:input]) or params[:input].length > 30
     end
     unless params[:conversion].nil?
       logger.info("Validating input: #{params[:conversion][:input]}")
-      params[:conversion][:input] = "XXXXXXXXXXXXXXXXXXXXXXXXXXX" if illegal_characters.match(params[:conversion][:input])
+      params[:conversion][:input] = "XXXXXXXXXXXXXXXXXXXXXXXXXXX" if illegal_characters.match(params[:conversion][:input]) or
+        params[:conversion][:input].length > 30
     end
   end
   
