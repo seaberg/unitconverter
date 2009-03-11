@@ -1,3 +1,5 @@
+# Copyright (c) 2008-2009 Jonas Sjöberg
+
 # TODO: Perhaps it is possible to use automatic loading instead, if the unit_converter conforms to the
 # standard naming convention using modules, UnitConverter::UnitConverter or similar.
 # This error will disappear when the unit_converter library is converted to a proper ruby gem

@@ -1,3 +1,5 @@
+# Copyright (c) 2008-2009 Jonas Sjöberg
+
 module UnitConverterHelper
   
   # Renders a hash containing conversion types and values

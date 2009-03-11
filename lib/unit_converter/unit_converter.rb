@@ -1,3 +1,5 @@
+# Copyright (c) 2008-2009 Jonas Sjöberg
+
 require "rexml/document"
 
 # ConversionRule represents a single unit on which you can perform conversion, for example km/h.

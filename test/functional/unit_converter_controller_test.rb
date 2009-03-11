@@ -1,3 +1,5 @@
+# Copyright (c) 2008-2009 Jonas Sjöberg
+
 require File.dirname(__FILE__) + '/../test_helper'
 require 'unit_converter_controller'
 

@@ -1,3 +1,5 @@
+# Copyright (c) 2008-2009 Jonas Sjöberg
+
 require 'test/unit'
 require 'unit_converter'
 
