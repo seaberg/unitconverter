@@ -35,7 +35,7 @@ module UnitConverterHelper
     
     text += "<table>"
     results.each_key do |r|
-      text += "<tr><td>#{r}</td><td>#{results[r]}</td></tr>"
+      text += "<tr><td id=\"results-unit\">#{r}</td><td>#{results[r]}</td></tr>"
     end
     text += "</table>"
   end

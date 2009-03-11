@@ -28,6 +28,10 @@ body {
 	margin-bottom: 10px;
 }
 
+#results-unit {
+	padding-right: 20px;
+}
+
 #results {
 	width: 300px;
 }
