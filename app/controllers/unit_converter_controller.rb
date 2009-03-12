@@ -42,7 +42,10 @@ class UnitConverterController < ApplicationController
     units = uc.get_units
     @matched_units = []
     units.each do |u|
-      @matched_units << u if re.match(u)
+      if re.match(u)
+        logger.info("Matched unit #{u}")        
+        @matched_units << u
+      end
     end
   end
   
